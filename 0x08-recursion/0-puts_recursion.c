@@ -1,17 +1,19 @@
 #include "main.h"
 
 /**
- * _puts_iterative - prints a string
- * @s: pointer to the string to be printed
- * Return: void
+ *_puts_recursion - prints a string
+ *@s: pointer block of memory to fill
+ *Return: void
  */
 
-void _puts_iterative(char *s)
+void _puts_recursion(char *s)
 {
-    while (*s != '\0')
-    {
-        _putchar(*s);
-        s++;
-    }
-    _putchar('\n');
+	if (*s == '\0')
+	{
+		_putchar('\n');
+		return;
+	}
+
+	_putchar (*s);
+	_puts_recursion(s + 1);
 }
